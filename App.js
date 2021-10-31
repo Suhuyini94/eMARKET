@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-// import SignInScreen from "./screens/SignInScreen";
+import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from './screens/SignUpScreen';
 
 export default function App() {
@@ -11,9 +11,9 @@ export default function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ header: ()=> null}}>
-          {/* <Stack.Screen name = "SignIN" component = {SignInScreen} /> */}
           <Stack.Screen name = "SignUP" component = {SignUpScreen} />
-         
+          <Stack.Screen name = "SignIN" component = {SignInScreen} />
+
         </Stack.Navigator>
       </NavigationContainer>
   );

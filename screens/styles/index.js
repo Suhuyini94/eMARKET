@@ -30,6 +30,7 @@ const STYLES = StyleSheet.create({
     },
      
     buttonSecondary: {
+        backgroundColor: 'violet',
         height: 50,
         borderWidth: 1,
         borderColor: COLORS.light,
@@ -41,8 +42,8 @@ const STYLES = StyleSheet.create({
     },
 
     buttonImage: {
-        width: 20,
-        height: 20,
+        width: 30,
+        height: 30,
         marginLeft: 5
     }
 });

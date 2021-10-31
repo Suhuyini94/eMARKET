@@ -1,16 +1,17 @@
 import React from "react";
-import { View, Text, SafeAreaView, TextInput, Image } from 'react-native';
+import { View, Text, SafeAreaView, TextInput, Image, TouchableOpacity } from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView,  } from "react-native-gesture-handler";
 import COLORS from "./const/color";
 import STYLES from "./styles";
 
-export default function SignInScreen() {
+export default function SignInScreen(params) {
+    const navigation = params.navigation;
     return (
         <SafeAreaView style={{ paddingHorizontal: 20, flex: 1, backgroundColor: COLORS.white }}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ flexDirection: 'row', marginTop: 60 }}>
-                    <Text style={{ fontWeight: 'bold', fontSize: 22, color: COLORS.dark }}>e-</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 22, color: COLORS.dark }}>ELECTRO</Text>
                     <Text style={{ fontWeight: 'bold', fontSize: 22, color: COLORS.secondary }}>MART</Text>
                 </View>
                 <View style={{ marginTop: 70 }}>
@@ -47,12 +48,14 @@ export default function SignInScreen() {
                     />
                 </View>
 
+                <TouchableOpacity>
                 <View style={STYLES.buttonPrimary} >
                     <Text
                         style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 18 }} >
                         Sign In
                     </Text>
                 </View>
+                </TouchableOpacity>
                 <View>
                     <View style={{
                         marginVertical: 20,
@@ -88,7 +91,7 @@ export default function SignInScreen() {
                     <Text style={{color: COLORS.light, fontWeight: 'bold'}}>
                         Don't have an account?
                         </Text>
-                        <TouchableOpacity><Text style={{color: COLORS.pink, fontWeight: 'bold'}}>
+                        <TouchableOpacity onPress= {() => navigation.navigate('SignUP')}><Text style={{color: COLORS.pink, fontWeight: 'bold'}}>
                         Sign up
                         </Text></TouchableOpacity>
                     
