@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, SafeAreaView, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, TextInput, Image, } from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { ScrollView, } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import COLORS from "./const/color";
 import STYLES from "./styles";
 
@@ -11,8 +11,8 @@ export default function SignUpScreen(params) {
         <SafeAreaView style={{ paddingHorizontal: 20, flex: 1, backgroundColor: COLORS.white }}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ flexDirection: 'row', marginTop: 60 }}>
-                    <Text style={{ fontWeight: 'bold', fontSize: 22, color: COLORS.dark }}>ELECTRO</Text>
-                    <Text style={{ fontWeight: 'bold', fontSize: 22, color: COLORS.secondary }}>MART</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 22, color: COLORS.dark }}>EDGE</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 22, color: COLORS.secondary }}>TECH</Text>
                 </View>
                 <View style={{ marginTop: 70 }}>
                     <Text style={{ fontsize: 27, fontWeight: 'bold', color: COLORS.dark }}>
@@ -112,15 +112,21 @@ export default function SignUpScreen(params) {
                     <View style={{
                         flexDirection: 'row', justifyContent: 'space-between',
                     }}>
-                        <View style={STYLES.buttonSecondary}>
-                            <Text style={{ fontWeight: 'bold', fontSize: 16 }}>Sign up with</Text>
-                            <Image style={STYLES.buttonImage} source={require('../assets/facebook-logo.png')} />
-                        </View>
+                        <TouchableOpacity>
+                            <View style={STYLES.buttonSecondary}>
+                                <Text style={{ fontWeight: 'bold', fontSize: 18, margin: 15 }}>Sign up with</Text>
+                                <Image style={STYLES.buttonImage} source={require('../assets/facebook-logo.png')} />
+                            </View>
+                        </TouchableOpacity>
+
                         <View style={{ width: 10 }} />
-                        <View style={STYLES.buttonSecondary}>
-                            <Text style={{ fontWeight: 'bold', fontSize: 16 }}>Sign up with</Text>
-                            <Image style={STYLES.buttonImage} source={require('../assets/google-logo.png')} />
-                        </View>
+
+                        <TouchableOpacity>
+                            <View style={STYLES.buttonSecondary}>
+                                <Text style={{ fontWeight: 'bold', fontSize: 18, margin: 15 }}>Sign up with</Text>
+                                <Image style={STYLES.buttonImage} source={require('../assets/google-logo.png')} />
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style={{
@@ -133,9 +139,17 @@ export default function SignUpScreen(params) {
                     <Text style={{ color: COLORS.light, fontWeight: 'bold' }}>
                         Already have an account?
                     </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('SignIN')}><Text style={{ color: COLORS.pink, fontWeight: 'bold' }}>
-                        Sign in
-                    </Text></TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('SignIN')}
+                    >
+                        <Text
+                            style={{
+                                color: COLORS.pink,
+                                fontWeight: 'bold',
+                                paddingHorizontal: 5,
+                            }}>
+                            Sign in
+                        </Text>
+                    </TouchableOpacity>
 
                 </View>
             </ScrollView>
