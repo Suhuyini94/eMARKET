@@ -17,10 +17,10 @@ import laptops from '../../consts/laptops';
 
 const HomeScreen = ({navigation}) => {
   const categoryItems = [
-    {name: 'Chair', iconName: 'seat-outline'},
-    {name: 'Table', iconName: 'table-furniture'},
-    {name: 'Cupboard', iconName: 'cupboard-outline'},
-    {name: 'bed', iconName: 'bed-queen-outline'},
+    {name: 'Apple', iconName: 'apple'},
+    {name: 'Dell', iconName: 'laptop'},
+    {name: 'HP', iconName: 'laptop-mac'},
+    {name: 'Toshiba', iconName: 'laptop-chromebook'},
   ];
 
   const ListCategories = () => {
@@ -71,7 +71,7 @@ const HomeScreen = ({navigation}) => {
   const Card = ({laptop}) => {
     return (
       <Pressable
-        onPress={() => navigation.navigate('DetailsScreen', laptop)}>
+        onPress={() => navigation.navigate('Product Details', laptop)}>
         <View style={STYLES.card}>
           <View style={STYLES.iconContainer}>
             <Icon

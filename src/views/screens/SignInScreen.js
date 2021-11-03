@@ -53,7 +53,7 @@ const SignInScreen = ({ navigation }) => {
                             secureTextEntry
                         />
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                         <View style={STYLES.buttonPrimary}>
                             <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18 }}>
                                 Sign In
@@ -109,7 +109,7 @@ const SignInScreen = ({ navigation }) => {
                     <Text style={{ color: COLORS.light, fontWeight: 'bold' }}>
                         Don`t have an account ?
                     </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                         <Text style={{ color: COLORS.pink, fontWeight: 'bold' }}>
                             Sign up
                         </Text>
