@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import COLORS from '../../consts/color';
 import STYLES from '../../styles';
 const DetailsScreen = ({ navigation, route }) => {
-  const furniture = route.params;
+  const laptop = route.params;
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -25,12 +25,12 @@ const DetailsScreen = ({ navigation, route }) => {
         </View>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Furniture image */}
+        {/* laptop image */}
 
         <ImageBackground
           resizeMode="cover"
           style={STYLES.backgroundImage}
-          source={furniture.image}>
+          source={laptop.image}>
           <View
             style={{
               height: 60,
@@ -69,7 +69,7 @@ const DetailsScreen = ({ navigation, route }) => {
         <View style={STYLES.detailsContainer}>
           <Text
             style={{ fontSize: 20, fontWeight: 'bold', color: COLORS.primary0 }}>
-            {furniture.name}
+            {laptop.name}
           </Text>
           <Text
             style={{
@@ -98,7 +98,7 @@ const DetailsScreen = ({ navigation, route }) => {
             }}>
             <Text
               style={{ color: COLORS.yellow, fontSize: 22, fontWeight: 'bold' }}>
-              {furniture.price}
+              {laptop.price}
             </Text>
             <View style={STYLES.quantityContainer}>
               <View style={STYLES.quantityButton}>

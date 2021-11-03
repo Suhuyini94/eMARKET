@@ -1,4 +1,4 @@
-const furnitures = [
+const laptops = [
     {
       id: '1',
       name: 'Macbook',
@@ -34,7 +34,14 @@ const furnitures = [
       price: '$700',
       liked: false,
     },
+    {
+      id: '6',
+      name: 'Dell XPS',
+      image: require('../assets/dell3.jpg'),
+      price: '$700',
+      liked: false,
+    },
   ];
   
-  export default furnitures;
+  export default laptops;
   

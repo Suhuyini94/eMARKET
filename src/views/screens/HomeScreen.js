@@ -13,7 +13,7 @@ import {
 import COLORS from '../../consts/color';
 import STYLES from '../../styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import furnitures from '../../consts/furnitures';
+import laptops from '../../consts/laptops';
 
 const HomeScreen = ({navigation}) => {
   const categoryItems = [
@@ -68,30 +68,30 @@ const HomeScreen = ({navigation}) => {
     );
   };
 
-  const Card = ({furniture}) => {
+  const Card = ({laptop}) => {
     return (
       <Pressable
-        onPress={() => navigation.navigate('DetailsScreen', furniture)}>
+        onPress={() => navigation.navigate('DetailsScreen', laptop)}>
         <View style={STYLES.card}>
           <View style={STYLES.iconContainer}>
             <Icon
               name="heart"
-              color={furniture.liked ? COLORS.red : COLORS.primary0}
+              color={laptop.liked ? COLORS.red : COLORS.primary0}
             />
           </View>
           <Image
-            source={furniture.image}
+            source={laptop.image}
             style={{height: 120, width: '100%', borderRadius: 10}}
           />
 
-          <Text style={STYLES.cardName}>{furniture.name}</Text>
+          <Text style={STYLES.cardName}>{laptop.name}</Text>
           <View
             style={{
               marginTop: 5,
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            <Text style={STYLES.price}>{furniture.price}</Text>
+            <Text style={STYLES.price}>{laptop.price}</Text>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Icon name="star" color={COLORS.yellow} size={18} />
               <Text style={STYLES.rating}>4.3</Text>
@@ -102,17 +102,17 @@ const HomeScreen = ({navigation}) => {
     );
   };
 
-  const PopularItemCard = ({furniture}) => {
+  const PopularItemCard = ({laptop}) => {
     return (
       <View style={STYLES.popularItemCard}>
         <View style={STYLES.iconContainer}>
           <Icon
             name="heart"
-            color={furniture.liked ? COLORS.red : COLORS.primary0}
+            color={laptop.liked ? COLORS.red : COLORS.primary0}
           />
         </View>
         <Image
-          source={furniture.image}
+          source={laptop.image}
           style={{
             width: 100,
             height: '100%',
@@ -122,9 +122,9 @@ const HomeScreen = ({navigation}) => {
           }}
         />
         <View style={{paddingVertical: 15, justifyContent: 'center'}}>
-          <Text style={STYLES.cardName}>{furniture.name}</Text>
+          <Text style={STYLES.cardName}>{laptop.name}</Text>
           <View style={{flexDirection: 'row', marginTop: 10}}>
-            <Text style={STYLES.price}>{furniture.price}</Text>
+            <Text style={STYLES.price}>{laptop.price}</Text>
             <View style={{flexDirection: 'row', marginLeft: 10}}>
               <Icon name="star" color={COLORS.yellow} size={18} />
               <Text style={STYLES.rating}>4.3</Text>
@@ -165,15 +165,15 @@ const HomeScreen = ({navigation}) => {
         {/* Render categories */}
         <ListCategories />
 
-        {/* Render To Furnitures */}
-        <Text style={STYLES.title}>Top Furniture</Text>
+        {/* Render To laptops */}
+        <Text style={STYLES.title}>Top Laptop</Text>
 
         <FlatList
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{paddingLeft: 20}}
-          data={furnitures}
+          data={laptops}
           horizontal
-          renderItem={({item}) => <Card furniture={item} />}
+          renderItem={({item}) => <Card laptop={item} />}
         />
 
         {/* Render To Popular */}
@@ -182,8 +182,8 @@ const HomeScreen = ({navigation}) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{paddingLeft: 20}}
-          data={furnitures}
-          renderItem={({item}) => <PopularItemCard furniture={item} />}
+          data={laptops}
+          renderItem={({item}) => <PopularItemCard laptop={item} />}
         />
       </ScrollView>
     </SafeAreaView>
