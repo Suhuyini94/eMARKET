@@ -10,6 +10,8 @@ const COLORS = {
     primary: '#28388f',
     secondary: '#64beff',
     pink: '#ff2d5f',
+    tranparent: 'rgba(0,0,0,0)',
+
 };
 
 export default COLORS;
